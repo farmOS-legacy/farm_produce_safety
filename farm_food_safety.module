@@ -3,3 +3,5 @@
  * @file
  * Code for the Farm Food Safety feature.
  */
+
+include_once 'farm_food_safety.features.inc';
