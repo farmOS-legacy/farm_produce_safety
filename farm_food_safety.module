@@ -5,3 +5,12 @@
  */
 
 include_once 'farm_food_safety.features.inc';
+
+/**
+ * Implements hook_farm_log_categories().
+ */
+function farm_food_safety_farm_log_categories() {
+
+  // Provide an "Food Safety" log category.
+  return array('Food Safety');
+}
