@@ -22,8 +22,8 @@ function farm_food_safety_default_log_type() {
     "type" : "farm_training",
     "label" : "Training",
     "weight" : 0,
-    "name_pattern" : "Training",
-    "name_edit" : "1",
+    "name_pattern" : "Training: [log:field-farm-training-topics]",
+    "name_edit" : "0",
     "done" : "1",
     "rdf_mapping" : []
   }');
@@ -31,8 +31,8 @@ function farm_food_safety_default_log_type() {
     "type" : "farm_worker_health",
     "label" : "Worker Health",
     "weight" : 0,
-    "name_pattern" : "Worker health",
-    "name_edit" : "1",
+    "name_pattern" : "Worker health: [log:field-farm-people] [log:field-farm-health-summary]",
+    "name_edit" : "0",
     "done" : "1",
     "rdf_mapping" : []
   }');
