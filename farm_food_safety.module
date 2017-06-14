@@ -7,6 +7,81 @@
 include_once 'farm_food_safety.features.inc';
 
 /**
+ * Implements hook_farm_access_perms().
+ */
+function farm_food_safety_farm_access_perms($role) {
+
+  // Assemble a list of log types provided by this module.
+  $types = array(
+    'log' => array(
+      'farm_training',
+      'farm_worker_health',
+    ),
+  );
+
+  // Grant different CRUD permissions based on the role.
+  $perms = array();
+  switch ($role) {
+
+    // Farm Manager and Worker
+    case 'Farm Manager':
+    case 'Farm Worker':
+      $perms = farm_access_entity_perms($types);
+      break;
+
+    // Farm Viewer
+    case 'Farm Viewer':
+      $perms = farm_access_entity_perms($types, array('view'));
+      break;
+  }
+
+  return $perms;
+}
+
+/**
+ * Implements hook_farm_admin_actions().
+ */
+function farm_food_safety_farm_admin_actions() {
+
+  // Define farm area actions.
+  $actions = array(
+    'training' => array(
+      'title' => t('Add a training'),
+      'href' => 'log/add/farm_training',
+      'views' => array(
+        'farm_food_safety_training',
+      ),
+    ),
+    'worker_health' => array(
+      'title' => t('Add worker health log'),
+      'href' => 'log/add/farm_worker_health',
+      'views' => array(
+        'farm_food_safety_worker_health',
+      ),
+    ),
+  );
+  return $actions;
+}
+
+/**
+ * Implements hook_farm_taxonomy_term_view_views().
+ */
+function farm_food_safety_farm_taxonomy_term_view_views($term) {
+
+  // If the term is not an area, bail.
+  if ($term->vocabulary_machine_name != 'farm_areas') {
+    return array();
+  }
+
+  // Return a list of Views to include on Areas.
+  return array(
+    array(
+      'name' => 'farm_food_safety_worker_health',
+    ),
+  );
+}
+
+/**
  * Implements hook_farm_log_categories().
  */
 function farm_food_safety_farm_log_categories() {
