@@ -20,6 +20,8 @@ This module depends on the following modules:
  * Log (http://drupal.org/project/log)
  * Multiupload Filefield Widget (http://drupal.org/project/multiupload_filefield_widget)
  * Multiupload Imagefield Widget (http://drupal.org/project/multiupload_imagefield_widget)
+ * Views (http://drupal.org/project/views)
+ * Views Data Export (http://drupal.org/project/views_data_export)
  * Farm Asset (http://drupal.org/project/farm_asset)
  * Farm Fields (http://drupal.org/project/farm_fields)
 
