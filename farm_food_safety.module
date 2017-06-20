@@ -7,6 +7,22 @@
 include_once 'farm_food_safety.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function farm_food_safety_menu() {
+
+  // Food safety dashboard.
+  $items['farm/food-safety'] = array(
+    'title' => 'Food Safety',
+    'page callback' => 'farm_food_safety_dashboard',
+    'access arguments' => array('access farm dashboard'),
+    'file' => 'farm_food_safety.pages.inc',
+    'type' => MENU_LOCAL_TASK,
+  );
+  return $items;
+}
+
+/**
  * Implements hook_farm_ui_entities().
  */
 function farm_food_safety_farm_ui_entities() {
