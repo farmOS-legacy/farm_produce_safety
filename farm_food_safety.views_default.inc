@@ -513,6 +513,11 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['field_farm_worker_returned']['id'] = 'field_farm_worker_returned';
   $handler->display->display_options['fields']['field_farm_worker_returned']['table'] = 'field_data_field_farm_worker_returned';
   $handler->display->display_options['fields']['field_farm_worker_returned']['field'] = 'field_farm_worker_returned';
+  /* Field: Log: Areas */
+  $handler->display->display_options['fields']['field_farm_area']['id'] = 'field_farm_area';
+  $handler->display->display_options['fields']['field_farm_area']['table'] = 'field_data_field_farm_area';
+  $handler->display->display_options['fields']['field_farm_area']['field'] = 'field_farm_area';
+  $handler->display->display_options['fields']['field_farm_area']['delta_offset'] = '0';
   /* Field: Log: Log category */
   $handler->display->display_options['fields']['field_farm_log_category']['id'] = 'field_farm_log_category';
   $handler->display->display_options['fields']['field_farm_log_category']['table'] = 'field_data_field_farm_log_category';
@@ -692,6 +697,7 @@ function farm_food_safety_views_default_views() {
     t('Injury/illness sustained'),
     t('Action taken'),
     t('Returned to work?'),
+    t('Areas'),
     t('Category'),
     t('Reporter'),
     t('Search'),
