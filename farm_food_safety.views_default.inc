@@ -551,6 +551,21 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['sorts']['name']['relationship'] = 'field_farm_log_owner_target_id';
   $handler->display->display_options['sorts']['name']['exposed'] = TRUE;
   $handler->display->display_options['sorts']['name']['expose']['label'] = 'Reporter';
+  /* Contextual filter: Log: Areas (field_farm_area) */
+  $handler->display->display_options['arguments']['field_farm_area_tid']['id'] = 'field_farm_area_tid';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['table'] = 'field_data_field_farm_area';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['field'] = 'field_farm_area_tid';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['title_enable'] = TRUE;
+  $handler->display->display_options['arguments']['field_farm_area_tid']['title'] = 'Worker health records in %1';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['field_farm_area_tid']['validate']['type'] = 'taxonomy_term';
+  $handler->display->display_options['arguments']['field_farm_area_tid']['validate_options']['vocabularies'] = array(
+    'farm_areas' => 'farm_areas',
+  );
   /* Filter criterion: Log: Log type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'log';
@@ -700,6 +715,8 @@ function farm_food_safety_views_default_views() {
     t('Areas'),
     t('Category'),
     t('Reporter'),
+    t('All'),
+    t('Worker health records in %1'),
     t('Search'),
     t('Start date'),
     t('End date'),
