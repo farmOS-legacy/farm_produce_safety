@@ -37,3 +37,104 @@ function farm_food_safety_farm_log_categories() {
   // Provide an "Food Safety" log category.
   return array('Food Safety');
 }
+
+/**
+ * Implements hook_feeds_importer_default_alter().
+ */
+function farm_food_safety_feeds_importer_default_alter(&$importers) {
+
+  // Add extra field mappings to trainings.
+  $name = 'log_farm_training';
+  if (!empty($importers[$name])) {
+    $mappings = array(
+      array(
+        'source' => 'Topics',
+        'target' => 'field_farm_training_topics',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Materials',
+        'target' => 'field_farm_training_materials',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Trainer',
+        'target' => 'field_farm_log_owner:label',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Attendees',
+        'target' => 'field_farm_people:label',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+    );
+    $importer_mappings =& $importers[$name]->config['processor']['config']['mappings'];
+    $importer_mappings = array_merge($importer_mappings, $mappings);
+  }
+
+  // Add extra field mappings to worker health logs.
+  $name = 'log_farm_worker_health';
+  if (!empty($importers[$name])) {
+    $mappings = array(
+      array(
+        'source' => 'Worker',
+        'target' => 'field_farm_people:label',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Injury/illness',
+        'target' => 'field_farm_health_summary',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Action taken',
+        'target' => 'field_farm_action',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Returned to work',
+        'target' => 'field_farm_worker_returned',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+      array(
+        'source' => 'Reporter',
+        'target' => 'field_farm_log_owner:label',
+        'unique' => FALSE,
+        'language' => 'und',
+      ),
+    );
+    $importer_mappings =& $importers[$name]->config['processor']['config']['mappings'];
+    $importer_mappings = array_merge($importer_mappings, $mappings);
+  }
+}
+
+/**
+ * Implements hook_feeds_tamper_default_alter().
+ */
+function farm_food_safety_feeds_tamper_default_alter(&$feeds_tampers) {
+
+  // If farm_import is not installed, bail.
+  if (!module_exists('farm_import')) {
+    return;
+  }
+
+  // Explode trainer in training logs.
+  $feeds_tamper = farm_import_feeds_tamper_plugin('log', 'farm_training', 'Trainer', 'explode');
+  $feeds_tampers[$feeds_tamper->id] = $feeds_tamper;
+
+  // Explode attendees in training logs.
+  $feeds_tamper = farm_import_feeds_tamper_plugin('log', 'farm_training', 'Attendees', 'explode');
+  $feeds_tampers[$feeds_tamper->id] = $feeds_tamper;
+
+  // Convert "Returned to work?" to boolean in worker health logs.
+  $feeds_tamper = farm_import_feeds_tamper_plugin('log', 'farm_worker_health', 'Returned to work', 'convert_boolean');
+  $feeds_tampers[$feeds_tamper->id] = $feeds_tamper;
+}
