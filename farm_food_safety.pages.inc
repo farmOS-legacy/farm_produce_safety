@@ -11,6 +11,9 @@
 function farm_food_safety_dashboard() {
   $build = array();
 
+  // Set the page title.
+  drupal_set_title(t('Food Safety Dashboard'));
+
   // Add the collapse library so our collapsible fieldsets work properly.
   drupal_add_library('system', 'drupal.collapse');
 
