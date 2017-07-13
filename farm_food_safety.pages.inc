@@ -10,11 +10,28 @@
  */
 function farm_food_safety_dashboard() {
   $build = array();
+
+  // Add the collapse library so our collapsible fieldsets work properly.
+  drupal_add_library('system', 'drupal.collapse');
+
+  // Pull in all the fieldsets.
   $build['water'] = farm_food_safety_dashboard_water();
   $build['soil'] = farm_food_safety_dashboard_soil();
   $build['animals'] = farm_food_safety_dashboard_animals();
   $build['workers'] = farm_food_safety_dashboard_workers();
   $build['equipment'] = farm_food_safety_dashboard_equipment();
+
+  // Make them collapsible.
+  foreach ($build as &$fieldset) {
+    $fieldset['#collapsible'] = TRUE;
+    $fieldset['#attributes'] = array(
+      'class' => array(
+        'collapsible',
+      ),
+    );
+  }
+
+  // Return the render array.
   return $build;
 }
 
