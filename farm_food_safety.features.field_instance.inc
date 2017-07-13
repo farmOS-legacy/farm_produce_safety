@@ -15,7 +15,7 @@ function farm_food_safety_field_default_field_instances() {
     'bundle' => 'farm_training',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Select the area(s) where this training took place.',
+    'description' => 'What areas is this training taking place in?',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -666,12 +666,12 @@ function farm_food_safety_field_default_field_instances() {
   t('Returned to work?');
   t('Select all people who are affected by this worker health log.');
   t('Select all people who attended this training.');
-  t('Select the area(s) where this training took place.');
   t('Summarize the topics covered by this training. More details should be provided in the "Training materials" field below.');
   t('Trainer');
   t('Training materials');
   t('Training topics');
   t('Use this to organize your logs into categories for easier searching and filtering later.');
+  t('What areas is this training taking place in?');
   t('Who is administering the training?');
   t('Who is reporting this worker health log?');
   t('Worker');
