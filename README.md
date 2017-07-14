@@ -9,21 +9,8 @@ distribution.
 DEPENDENCIES
 ------------
 
-This module depends on the following modules:
-
- * Colorbox (http://drupal.org/project/colorbox)
- * Ctools (http://drupal.org/project/ctools)
- * Entity API (http://drupal.org/project/entity)
- * Entity Reference (http://drupal.org/project/entityreference)
- * Features (http://drupal.org/project/features)
- * Field Group (http://drupal.org/project/field_group)
- * Log (http://drupal.org/project/log)
- * Multiupload Filefield Widget (http://drupal.org/project/multiupload_filefield_widget)
- * Multiupload Imagefield Widget (http://drupal.org/project/multiupload_imagefield_widget)
- * Views (http://drupal.org/project/views)
- * Views Data Export (http://drupal.org/project/views_data_export)
- * Farm Asset (http://drupal.org/project/farm_asset)
- * Farm Fields (http://drupal.org/project/farm_fields)
+This module depends on [farmOS](http://drupal.org/project/farm), and a number
+of contrib modules that are packaged with it.
 
 INSTALLATION
 ------------
@@ -41,3 +28,4 @@ Current maintainers:
 This project has been sponsored by:
  * [UVM Extension](https://www.uvm.edu/extension)
  * [Farmier](http://farmier.com)
+ 
