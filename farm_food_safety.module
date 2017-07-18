@@ -55,6 +55,31 @@ function farm_food_safety_farm_log_categories() {
 }
 
 /**
+ * Implements hook_form_log_form_alter().
+ */
+function farm_food_safety_form_log_form_alter(&$form, &$form_state) {
+
+  // Only act on new logs.
+  if (empty($form['#entity']) || !empty($form['#entity']->id)) {
+    return;
+  }
+
+  // Create a link to the food safety dashboard.
+  $link = l(t('Go to the Food Safety Dashboard'), 'farm/food-safety');
+
+  // If the log is a seeding/transplanting, display a pre-planting assessment
+  // reminder.
+  if (in_array($form['#entity']->type, array('farm_seeding', 'farm_transplanting'))) {
+    drupal_set_message(t('Reminder: did you perform a pre-planting risk assessment?') . ' ' . $link, 'warning');
+  }
+
+  // Or, if the log is a harvest, display a pre-harvest assessment reminder.
+  elseif ($form['#entity']->type == 'farm_harvest') {
+    drupal_set_message(t('Reminder: did you perform a pre-harvest risk assessment?') . ' ' . $link, 'warning');
+  }
+}
+
+/**
  * Implements hook_feeds_importer_default_alter().
  */
 function farm_food_safety_feeds_importer_default_alter(&$importers) {
