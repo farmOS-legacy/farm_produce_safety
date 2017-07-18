@@ -66,8 +66,8 @@ function farm_food_safety_dashboard() {
       'links' => array(
         l('Manage Areas', 'farm/areas'),
         l('Manage Equipment', 'farm/assets/equipment'),
-        l('Add log: Area cleaning', 'log/add/farm_activity', array('query' => array('name' => 'Area cleaning', 'category' => array('Food Safety')))),
-        l('Add log: Equipment cleaning', 'log/add/farm_maintenance', array('query' => array('name' => 'Equipment cleaning', 'category' => array('Food Safety')))),
+        l('Add log: Area cleaning/sanitizing', 'log/add/farm_activity', array('query' => array('name' => 'Area cleaning/sanitizing', 'category' => array('Food Safety')))),
+        l('Add log: Equipment cleaning/sanitizing', 'log/add/farm_maintenance', array('query' => array('name' => 'Equipment cleaning/sanitizing', 'category' => array('Food Safety')))),
       ),
     ),
   );
