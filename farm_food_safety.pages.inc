@@ -28,28 +28,28 @@ function farm_food_safety_dashboard() {
     'water' => array(
       'title' => t('Agricultural Water'),
       'links' => array(
-        l('Add log: Water test', 'log/add/farm_water_test'),
-        l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action'))),
+        l('Add log: Water test', 'log/add/farm_water_test', array('query' => array('category' => array('Food Safety')))),
+        l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action', 'category' => array('Food Safety', 'Water')))),
       ),
     ),
     'soil' => array(
       'title' => t('Biological Soil Amendments'),
       'links' => array(
         l('Manage Compost', 'farm/assets/compost'),
-        l('Add log: Compost turning', 'log/add/farm_activity', array('query' => array('name' => 'Compost turning'))),
-        l('Add log: Compost temperature observation', 'log/add/farm_observation', array('query' => array('name' => 'Compost temperature'))),
-        l('Add log: Soil test', 'log/add/farm_soil_test'),
-        l('Add log: Input', 'log/add/farm_input'),
+        l('Add log: Compost turning', 'log/add/farm_activity', array('query' => array('name' => 'Compost turning', 'category' => array('Food Safety', 'Compost')))),
+        l('Add log: Compost temperature observation', 'log/add/farm_observation', array('query' => array('name' => 'Compost temperature', 'category' => array('Food Safety', 'Compost')))),
+        l('Add log: Soil test', 'log/add/farm_soil_test', array('query' => array('category' => array('Food Safety')))),
+        l('Add log: Input', 'log/add/farm_input', array('query' => array('category' => array('Food Safety', 'Soil')))),
       ),
     ),
     'animals' => array(
       'title' => t('Domesticated and Wild Animals'),
       'links' => array(
         l('Manage Animals', 'farm/assets/animals'),
-        l('Add log: Pre-planting risk observation', 'log/add/farm_observation', array('query' => array('name' => 'Pre-planting risk observation'))),
-        l('Add log: Pre-harvest risk observation', 'log/add/farm_observation', array('query' => array('name' => 'Pre-harvest risk observation'))),
-        l('Add log: Intrusion/contamination observation', 'log/add/farm_observation', array('query' => array('name' => 'Intrusion/contamination'))),
-        l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action'))),
+        l('Add log: Pre-planting risk observation', 'log/add/farm_observation', array('query' => array('name' => 'Pre-planting risk observation', 'category' => array('Food Safety', 'Animals')))),
+        l('Add log: Pre-harvest risk observation', 'log/add/farm_observation', array('query' => array('name' => 'Pre-harvest risk observation', 'category' => array('Food Safety', 'Animals')))),
+        l('Add log: Intrusion/contamination observation', 'log/add/farm_observation', array('query' => array('name' => 'Intrusion/contamination', 'category' => array('Food Safety', 'Animals')))),
+        l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action', 'category' => array('Food Safety', 'Animals')))),
       ),
     ),
     'workers' => array(
@@ -57,8 +57,8 @@ function farm_food_safety_dashboard() {
       'links' => array(
         l('Add log: Training', 'log/add/farm_training'),
         l('Add log: Worker health', 'log/add/farm_worker_health'),
-        l('Add log: Restock facilities', 'log/add/farm_activity', array('query' => array('name' => 'Restock facilities'))),
-        l('Add log: Restock first aid', 'log/add/farm_activity', array('query' => array('name' => 'Restock first aid'))),
+        l('Add log: Restock facilities', 'log/add/farm_activity', array('query' => array('name' => 'Restock facilities', 'category' => array('Food Safety')))),
+        l('Add log: Restock first aid', 'log/add/farm_activity', array('query' => array('name' => 'Restock first aid', 'category' => array('Food Safety')))),
       ),
     ),
     'equipment' => array(
@@ -66,7 +66,8 @@ function farm_food_safety_dashboard() {
       'links' => array(
         l('Manage Areas', 'farm/areas'),
         l('Manage Equipment', 'farm/assets/equipment'),
-        l('Add log: Cleaning/sanitization', 'log/add/farm_activity', array('query' => array('name' => 'Clean/sanitize'))),
+        l('Add log: Area cleaning', 'log/add/farm_activity', array('query' => array('name' => 'Area cleaning', 'category' => array('Food Safety')))),
+        l('Add log: Equipment cleaning', 'log/add/farm_maintenance', array('query' => array('name' => 'Equipment cleaning', 'category' => array('Food Safety')))),
       ),
     ),
   );
