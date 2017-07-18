@@ -25,11 +25,13 @@ function farm_food_safety_dashboard() {
 
   // Build collapsed fieldsets.
   $fieldsets = array(
-    'water' => array(
-      'title' => t('Agricultural Water'),
+    'workers' => array(
+      'title' => t('Worker Health, Hygiene, and Training'),
       'links' => array(
-        l('Add log: Water test', 'log/add/farm_water_test', array('query' => array('category' => array('Food Safety')))),
-        l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action', 'category' => array('Food Safety', 'Water')))),
+        l('Add log: Training', 'log/add/farm_training'),
+        l('Add log: Worker health', 'log/add/farm_worker_health'),
+        l('Add log: Restock facilities', 'log/add/farm_activity', array('query' => array('name' => 'Restock facilities', 'category' => array('Food Safety')))),
+        l('Add log: Restock first aid', 'log/add/farm_activity', array('query' => array('name' => 'Restock first aid', 'category' => array('Food Safety')))),
       ),
     ),
     'soil' => array(
@@ -52,13 +54,11 @@ function farm_food_safety_dashboard() {
         l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action', 'category' => array('Food Safety', 'Animals')))),
       ),
     ),
-    'workers' => array(
-      'title' => t('Worker Health, Hygiene, and Training'),
+    'water' => array(
+      'title' => t('Agricultural Water'),
       'links' => array(
-        l('Add log: Training', 'log/add/farm_training'),
-        l('Add log: Worker health', 'log/add/farm_worker_health'),
-        l('Add log: Restock facilities', 'log/add/farm_activity', array('query' => array('name' => 'Restock facilities', 'category' => array('Food Safety')))),
-        l('Add log: Restock first aid', 'log/add/farm_activity', array('query' => array('name' => 'Restock first aid', 'category' => array('Food Safety')))),
+        l('Add log: Water test', 'log/add/farm_water_test', array('query' => array('category' => array('Food Safety')))),
+        l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action', 'category' => array('Food Safety', 'Water')))),
       ),
     ),
     'equipment' => array(
