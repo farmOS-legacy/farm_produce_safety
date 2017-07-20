@@ -20,7 +20,7 @@ function farm_food_safety_dashboard() {
   $build['container'] = array(
     '#type' => 'fieldset',
     '#title' => t('FSMA Produce Safety Rule'),
-    '#description' => t('The Produce Safety Rule is part of the FDA Food Safety Modernization Act (FSMA). This regulation focuses on setting federal regulatory standards for the production, harvest, and handling of fruits and vegetables, in an effort to prevent microbial contamination and reduce foodborne illnesses associated with fresh produce. This dashboard provides shortcuts for keeping food safety records with farmOS.'),
+    '#description' => t("The Produce Safety Rule is part of the FDA Food Safety Modernization Act (FSMA). This regulation focuses on setting federal regulatory standards for the production, harvest, and handling of fruits and vegetables, in an effort to prevent microbial contamination and reduce foodborne illnesses associated with fresh produce. This dashboard provides shortcuts for keeping food safety records with farmOS. For more information on guidelines, refer to the FDA's " . l('FSMA Final Rule on Produce Safety', 'https://www.fda.gov/Food/GuidanceRegulation/FSMA/ucm334114.htm') . " and Cornell University's " . l('Produce Safety Alliance', 'https://producesafetyalliance.cornell.edu') . "."),
   );
 
   // Build collapsed fieldsets.
