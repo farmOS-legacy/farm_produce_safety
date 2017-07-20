@@ -68,5 +68,6 @@ features[field_instance][] = log-farm_worker_health-field_farm_people
 features[field_instance][] = log-farm_worker_health-field_farm_worker_returned
 features[log_type][] = farm_training
 features[log_type][] = farm_worker_health
+features[views_view][] = farm_food_safety_files
 features[views_view][] = farm_food_safety_training
 features[views_view][] = farm_food_safety_worker_health
