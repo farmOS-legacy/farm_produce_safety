@@ -1,0 +1,46 @@
+<?php
+/**
+ * @file
+ * Farm Food Safety install code.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function farm_food_safety_schema() {
+  $schema['farm_food_safety_doc'] = array(
+    'description' => 'Farm Food Safety Documents',
+    'fields' => array(
+      'fid' => array(
+        'description' => 'File ID',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'type' => array(
+        'description' => 'The type of food safety document.',
+        'type' => 'varchar',
+        'length' => 32,
+        'not null' => TRUE,
+      ),
+      'label' => array(
+        'description' => 'The human-readable name of this document.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+    ),
+    'primary key' => array('fid'),
+    'indexes' => array(
+      'label' => array('label'),
+    ),
+    'foreign keys' => array(
+      'file_managed' => array(
+        'table' => 'file_managed',
+        'columns' => array('fid' => 'fid'),
+      ),
+    ),
+  );
+  return $schema;
+}
