@@ -120,6 +120,12 @@ function farm_food_safety_dashboard() {
     'form' => drupal_get_form('farm_food_safety_document_upload_form'),
   );
 
+  // Create left and right columns (depends on Bootstrap).
+  $build['container']['fieldsets']['#prefix'] = '<div class="col-md-6">';
+  $build['container']['fieldsets']['#suffix'] = '</div>';
+  $build['container']['documents']['#prefix'] = '<div class="col-md-6">';
+  $build['container']['documents']['#suffix'] = '</div>';
+
   // Return the render array.
   return $build;
 }
