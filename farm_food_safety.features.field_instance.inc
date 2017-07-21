@@ -13,7 +13,7 @@ function farm_food_safety_field_default_field_instances() {
   // Exported field_instance: 'log-farm_training-field_farm_area'.
   $field_instances['log-farm_training-field_farm_area'] = array(
     'bundle' => 'farm_training',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'What areas is this training taking place in?',
     'display' => array(
