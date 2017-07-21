@@ -94,6 +94,32 @@ function farm_food_safety_dashboard() {
     }
   }
 
+  // Add documents section.
+  $build['container']['documents'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Documents'),
+  );
+  $view = views_get_view('farm_food_safety_files');
+  if (!empty($view) && $view->access('default')) {
+    $build['container']['documents']['list'] = array(
+      '#type' => 'markup',
+      '#markup' => $view->preview(),
+    );
+  }
+  $build['container']['documents']['upload'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Add document'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+    '#attributes' => array(
+      'class' => array(
+        'collapsible',
+        'collapsed',
+      ),
+    ),
+    'form' => drupal_get_form('farm_food_safety_document_upload_form'),
+  );
+
   // Return the render array.
   return $build;
 }
