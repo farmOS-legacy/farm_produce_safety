@@ -168,6 +168,7 @@ function farm_food_safety_views_default_views() {
     'timestamp' => 'timestamp',
     'name_1' => 'name_1',
     'field_farm_area' => 'field_farm_area',
+    'field_farm_notes' => 'field_farm_notes',
     'field_farm_log_category' => 'field_farm_log_category',
     'name' => 'name',
   );
@@ -207,6 +208,13 @@ function farm_food_safety_views_default_views() {
       'empty_column' => 0,
     ),
     'field_farm_area' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_notes' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -305,7 +313,6 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'log';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
-  $handler->display->display_options['fields']['name_1']['label'] = 'Training';
   $handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name_1']['alter']['path'] = 'log/[id]';
   /* Field: Log: Areas */
@@ -314,11 +321,19 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['field_farm_area']['field'] = 'field_farm_area';
   $handler->display->display_options['fields']['field_farm_area']['label'] = 'Location';
   $handler->display->display_options['fields']['field_farm_area']['delta_offset'] = '0';
+  /* Field: Log: Notes */
+  $handler->display->display_options['fields']['field_farm_notes']['id'] = 'field_farm_notes';
+  $handler->display->display_options['fields']['field_farm_notes']['table'] = 'field_data_field_farm_notes';
+  $handler->display->display_options['fields']['field_farm_notes']['field'] = 'field_farm_notes';
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['max_length'] = '140';
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['trim'] = TRUE;
   /* Field: Log: Log category */
   $handler->display->display_options['fields']['field_farm_log_category']['id'] = 'field_farm_log_category';
   $handler->display->display_options['fields']['field_farm_log_category']['table'] = 'field_data_field_farm_log_category';
   $handler->display->display_options['fields']['field_farm_log_category']['field'] = 'field_farm_log_category';
-  $handler->display->display_options['fields']['field_farm_log_category']['label'] = 'Category';
+  $handler->display->display_options['fields']['field_farm_log_category']['label'] = 'Categories';
   $handler->display->display_options['fields']['field_farm_log_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_farm_log_category']['delta_offset'] = '0';
   /* Field: User: Name */
@@ -385,7 +400,7 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['filters']['field_farm_log_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_farm_log_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['operator_id'] = 'field_farm_log_category_tid_op';
-  $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['label'] = 'Category';
+  $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['label'] = 'Categories';
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['operator'] = 'field_farm_log_category_tid_op';
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['identifier'] = 'field_farm_log_category_tid';
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['multiple'] = TRUE;
@@ -489,9 +504,10 @@ function farm_food_safety_views_default_views() {
     t('.'),
     t(','),
     t('Date'),
-    t('Training'),
+    t('Name'),
     t('Location'),
-    t('Category'),
+    t('Notes'),
+    t('Categories'),
     t('Trainer'),
     t('Search'),
     t('Start date'),
@@ -528,11 +544,99 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'done' => 'done',
     'id' => 'id',
+    'timestamp' => 'timestamp',
+    'name_1' => 'name_1',
+    'field_farm_people' => 'field_farm_people',
+    'field_farm_health_summary' => 'field_farm_health_summary',
+    'field_farm_action' => 'field_farm_action',
+    'field_farm_worker_returned' => 'field_farm_worker_returned',
+    'field_farm_area' => 'field_farm_area',
+    'field_farm_notes' => 'field_farm_notes',
+    'field_farm_log_category' => 'field_farm_log_category',
+    'name' => 'name',
   );
   $handler->display->display_options['style_options']['default'] = '-1';
   $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'done' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
     'id' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'timestamp' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name_1' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_people' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_health_summary' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_action' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_worker_returned' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_area' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_notes' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_farm_log_category' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
       'align' => '',
@@ -617,6 +721,12 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'custom';
   $handler->display->display_options['fields']['timestamp']['custom_date_format'] = 'M j Y';
   $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
+  /* Field: Log: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'log';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['name_1']['alter']['path'] = 'log/[id]';
   /* Field: Log: Worker */
   $handler->display->display_options['fields']['field_farm_people']['id'] = 'field_farm_people';
   $handler->display->display_options['fields']['field_farm_people']['table'] = 'field_data_field_farm_people';
@@ -643,11 +753,19 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['field_farm_area']['table'] = 'field_data_field_farm_area';
   $handler->display->display_options['fields']['field_farm_area']['field'] = 'field_farm_area';
   $handler->display->display_options['fields']['field_farm_area']['delta_offset'] = '0';
+  /* Field: Log: Notes */
+  $handler->display->display_options['fields']['field_farm_notes']['id'] = 'field_farm_notes';
+  $handler->display->display_options['fields']['field_farm_notes']['table'] = 'field_data_field_farm_notes';
+  $handler->display->display_options['fields']['field_farm_notes']['field'] = 'field_farm_notes';
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['trim_whitespace'] = TRUE;
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['max_length'] = '140';
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_farm_notes']['alter']['trim'] = TRUE;
   /* Field: Log: Log category */
   $handler->display->display_options['fields']['field_farm_log_category']['id'] = 'field_farm_log_category';
   $handler->display->display_options['fields']['field_farm_log_category']['table'] = 'field_data_field_farm_log_category';
   $handler->display->display_options['fields']['field_farm_log_category']['field'] = 'field_farm_log_category';
-  $handler->display->display_options['fields']['field_farm_log_category']['label'] = 'Category';
+  $handler->display->display_options['fields']['field_farm_log_category']['label'] = 'Categories';
   $handler->display->display_options['fields']['field_farm_log_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_farm_log_category']['delta_offset'] = '0';
   /* Field: User: Name */
@@ -729,7 +847,7 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['filters']['field_farm_log_category_tid']['group'] = 1;
   $handler->display->display_options['filters']['field_farm_log_category_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['operator_id'] = 'field_farm_log_category_tid_op';
-  $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['label'] = 'Category';
+  $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['label'] = 'Categories';
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['operator'] = 'field_farm_log_category_tid_op';
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['identifier'] = 'field_farm_log_category_tid';
   $handler->display->display_options['filters']['field_farm_log_category_tid']['expose']['multiple'] = TRUE;
@@ -833,12 +951,14 @@ function farm_food_safety_views_default_views() {
     t('.'),
     t(','),
     t('Date'),
+    t('Name'),
     t('Worker'),
     t('Injury/illness sustained'),
     t('Action taken'),
     t('Returned to work?'),
     t('Areas'),
-    t('Category'),
+    t('Notes'),
+    t('Categories'),
     t('Reporter'),
     t('All'),
     t('Worker health records in %1'),
