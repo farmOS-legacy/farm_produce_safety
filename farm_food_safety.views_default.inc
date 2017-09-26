@@ -305,6 +305,7 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'log';
   $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: Log: Timestamp */
   $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['table'] = 'log';
@@ -511,7 +512,6 @@ function farm_food_safety_views_default_views() {
     t('✔'),
     t('Log ID'),
     t('.'),
-    t(','),
     t('Date'),
     t('Name'),
     t('Location'),
@@ -726,6 +726,7 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'log';
   $handler->display->display_options['fields']['id']['field'] = 'id';
+  $handler->display->display_options['fields']['id']['separator'] = '';
   /* Field: Log: Timestamp */
   $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['table'] = 'log';
@@ -967,7 +968,6 @@ function farm_food_safety_views_default_views() {
     t('✔'),
     t('Log ID'),
     t('.'),
-    t(','),
     t('Date'),
     t('Name'),
     t('Worker'),
