@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farm_food_safety.features.field_instance.inc
+ * farm_produce_safety.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function farm_food_safety_field_default_field_instances() {
+function farm_produce_safety_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'log-farm_training-field_farm_area'.
@@ -265,7 +265,7 @@ function farm_food_safety_field_default_field_instances() {
     'bundle' => 'farm_training',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Include training materials and provide an outline of the training topics discussed. Also reference any relevant SOPs or sections of your farm food safety plan that apply.',
+    'description' => 'Include training materials and provide an outline of the training topics discussed. Also reference any relevant SOPs or sections of your farm produce safety plan that apply.',
     'display' => array(
       'default' => array(
         'label' => 'inline',
@@ -657,7 +657,7 @@ function farm_food_safety_field_default_field_instances() {
   t('Briefly summarize the injury or illness sustained by the worker(s). Use the Notes field for a more detailed report.');
   t('Did the employee(s) return to work?');
   t('Files');
-  t('Include training materials and provide an outline of the training topics discussed. Also reference any relevant SOPs or sections of your farm food safety plan that apply.');
+  t('Include training materials and provide an outline of the training topics discussed. Also reference any relevant SOPs or sections of your farm produce safety plan that apply.');
   t('Injury/illness sustained');
   t('Log category');
   t('Notes');

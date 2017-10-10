@@ -1,28 +1,28 @@
 <?php
 /**
  * @file
- * farm_food_safety.views_default.inc
+ * farm_produce_safety.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function farm_food_safety_views_default_views() {
+function farm_produce_safety_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'farm_food_safety_files';
+  $view->name = 'farm_produce_safety_files';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'file_managed';
-  $view->human_name = 'Farm Food Safety Files';
+  $view->human_name = 'Farm Produce Safety Files';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Food Safety Files';
+  $handler->display->display_options['title'] = 'Produce Safety Files';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -88,14 +88,14 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['filename']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['filename']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['filename']['link_to_file'] = TRUE;
-  /* Field: Food safety documents: Food safety document label */
+  /* Field: Produce safety documents: Produce safety document label */
   $handler->display->display_options['fields']['label']['id'] = 'label';
-  $handler->display->display_options['fields']['label']['table'] = 'farm_food_safety_doc';
+  $handler->display->display_options['fields']['label']['table'] = 'farm_produce_safety_doc';
   $handler->display->display_options['fields']['label']['field'] = 'label';
   $handler->display->display_options['fields']['label']['label'] = 'Label';
-  /* Field: Food safety documents: Food safety document type */
+  /* Field: Produce safety documents: Produce safety document type */
   $handler->display->display_options['fields']['type']['id'] = 'type';
-  $handler->display->display_options['fields']['type']['table'] = 'farm_food_safety_doc';
+  $handler->display->display_options['fields']['type']['table'] = 'farm_produce_safety_doc';
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = 'Type';
   /* Field: File: Upload date */
@@ -104,20 +104,20 @@ function farm_food_safety_views_default_views() {
   $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
   $handler->display->display_options['fields']['timestamp']['date_format'] = 'short';
   $handler->display->display_options['fields']['timestamp']['second_date_format'] = 'long';
-  /* Sort criterion: Food safety documents: Food safety document label */
+  /* Sort criterion: Produce safety documents: Produce safety document label */
   $handler->display->display_options['sorts']['label']['id'] = 'label';
-  $handler->display->display_options['sorts']['label']['table'] = 'farm_food_safety_doc';
+  $handler->display->display_options['sorts']['label']['table'] = 'farm_produce_safety_doc';
   $handler->display->display_options['sorts']['label']['field'] = 'label';
   $handler->display->display_options['sorts']['label']['expose']['label'] = 'Label';
   /* Filter criterion: File Usage: Module */
   $handler->display->display_options['filters']['module']['id'] = 'module';
   $handler->display->display_options['filters']['module']['table'] = 'file_usage';
   $handler->display->display_options['filters']['module']['field'] = 'module';
-  $handler->display->display_options['filters']['module']['value'] = 'farm_food_safety';
+  $handler->display->display_options['filters']['module']['value'] = 'farm_produce_safety';
   $handler->display->display_options['filters']['module']['group'] = 1;
-  $translatables['farm_food_safety_files'] = array(
+  $translatables['farm_produce_safety_files'] = array(
     t('Master'),
-    t('Food Safety Files'),
+    t('Produce Safety Files'),
     t('more'),
     t('Apply'),
     t('Reset'),
@@ -133,14 +133,14 @@ function farm_food_safety_views_default_views() {
     t('Type'),
     t('Upload date'),
   );
-  $export['farm_food_safety_files'] = $view;
+  $export['farm_produce_safety_files'] = $view;
 
   $view = new view();
-  $view->name = 'farm_food_safety_training';
+  $view->name = 'farm_produce_safety_training';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'log';
-  $view->human_name = 'Farm Food Safety: Training';
+  $view->human_name = 'Farm Produce Safety: Training';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -487,7 +487,7 @@ function farm_food_safety_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
-  $translatables['farm_food_safety_training'] = array(
+  $translatables['farm_produce_safety_training'] = array(
     t('Master'),
     t('Trainings'),
     t('more'),
@@ -524,14 +524,14 @@ function farm_food_safety_views_default_views() {
     t('Page'),
     t('Data export'),
   );
-  $export['farm_food_safety_training'] = $view;
+  $export['farm_produce_safety_training'] = $view;
 
   $view = new view();
-  $view->name = 'farm_food_safety_worker_health';
+  $view->name = 'farm_produce_safety_worker_health';
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'log';
-  $view->human_name = 'Farm Food Safety: Worker Health';
+  $view->human_name = 'Farm Produce Safety: Worker Health';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -943,7 +943,7 @@ function farm_food_safety_views_default_views() {
     'page' => 'page',
     'default' => 0,
   );
-  $translatables['farm_food_safety_worker_health'] = array(
+  $translatables['farm_produce_safety_worker_health'] = array(
     t('Master'),
     t('Worker Health'),
     t('more'),
@@ -986,7 +986,7 @@ function farm_food_safety_views_default_views() {
     t('Page'),
     t('Data export'),
   );
-  $export['farm_food_safety_worker_health'] = $view;
+  $export['farm_produce_safety_worker_health'] = $view;
 
   return $export;
 }

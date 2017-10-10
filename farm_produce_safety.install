@@ -1,15 +1,15 @@
 <?php
 /**
  * @file
- * Farm Food Safety install code.
+ * Farm Produce Safety install code.
  */
 
 /**
  * Implements hook_schema().
  */
-function farm_food_safety_schema() {
-  $schema['farm_food_safety_doc'] = array(
-    'description' => 'Farm Food Safety Documents',
+function farm_produce_safety_schema() {
+  $schema['farm_produce_safety_doc'] = array(
+    'description' => 'Farm Produce Safety Documents',
     'fields' => array(
       'fid' => array(
         'description' => 'File ID',
@@ -18,7 +18,7 @@ function farm_food_safety_schema() {
         'not null' => TRUE,
       ),
       'type' => array(
-        'description' => 'The type of food safety document.',
+        'description' => 'The type of produce safety document.',
         'type' => 'varchar',
         'length' => 32,
         'not null' => TRUE,

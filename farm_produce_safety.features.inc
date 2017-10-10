@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farm_food_safety.features.inc
+ * farm_produce_safety.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function farm_food_safety_ctools_plugin_api($module = NULL, $api = NULL) {
+function farm_produce_safety_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "field_group" && $api == "field_group") {
     return array("version" => "1");
   }
@@ -16,14 +16,14 @@ function farm_food_safety_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function farm_food_safety_views_api($module = NULL, $api = NULL) {
+function farm_produce_safety_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_default_log_type().
  */
-function farm_food_safety_default_log_type() {
+function farm_produce_safety_default_log_type() {
   $items = array();
   $items['farm_training'] = entity_import('log_type', '{
     "type" : "farm_training",

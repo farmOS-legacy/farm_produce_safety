@@ -1,7 +1,7 @@
-FARM FOOD SAFETY
-================
+FARM PRODUCE SAFETY
+==================
 
-Provides features for food safety recordkeeping in farmOS.
+Provides features for produce safety record keeping in farmOS.
 
 This module is an add-on for the [farmOS](http://drupal.org/project/farm)
 distribution.

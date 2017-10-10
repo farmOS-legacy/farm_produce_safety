@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farm_food_safety.field_group.inc
+ * farm_produce_safety.field_group.inc
  */
 
 /**
  * Implements hook_field_group_info().
  */
-function farm_food_safety_field_group_info() {
+function farm_produce_safety_field_group_info() {
   $field_groups = array();
 
   $field_group = new stdClass();

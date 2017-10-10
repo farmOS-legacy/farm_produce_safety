@@ -2,20 +2,20 @@
 
 /**
  * @file
- * Farm Food Safety Views data.
+ * Farm Produce Safety Views data.
  */
 
 /**
  * Implements hook_views_data().
  */
-function farm_food_safety_views_data() {
+function farm_produce_safety_views_data() {
 
-  // Describe the {farm_food_safety_doc} table to Views.
-  $data['farm_food_safety_doc']['table']['group'] = t('Food safety documents');
+  // Describe the {farm_produce_safety_doc} table to Views.
+  $data['farm_produce_safety_doc']['table']['group'] = t('Produce safety documents');
 
   // Create an implicit relationship to the file_managed table, so that when
   // the base table is file_managed, document fields are automatically available.
-  $data['farm_food_safety_doc']['table']['join'] = array(
+  $data['farm_produce_safety_doc']['table']['join'] = array(
     'file_managed' => array(
       'left_field' => 'fid',
       'field' => 'fid',
@@ -23,12 +23,12 @@ function farm_food_safety_views_data() {
   );
 
   // Document type.
-  $data['farm_food_safety_doc']['type'] = array(
-    'title' => t('Food safety document type'),
-    'help' => t('The type of food safety document.'),
+  $data['farm_produce_safety_doc']['type'] = array(
+    'title' => t('Produce safety document type'),
+    'help' => t('The type of produce safety document.'),
     'field' => array(
       'handler' => 'views_handler_field_machine_name',
-      'options callback' => 'farm_food_safety_document_types',
+      'options callback' => 'farm_produce_safety_document_types',
       'click sortable' => TRUE,
     ),
     'sort' => array(
@@ -36,7 +36,7 @@ function farm_food_safety_views_data() {
     ),
     'filter' => array(
       'handler' => 'views_handler_filter_in_operator',
-      'options callback' => 'farm_food_safety_document_types',
+      'options callback' => 'farm_produce_safety_document_types',
     ),
     'argument' => array(
       'handler' => 'views_handler_argument_string',
@@ -44,9 +44,9 @@ function farm_food_safety_views_data() {
   );
 
   // Document label.
-  $data['farm_food_safety_doc']['label'] = array(
-    'title' => t('Food safety document label'),
-    'help' => t('The label for the food safety document.'),
+  $data['farm_produce_safety_doc']['label'] = array(
+    'title' => t('Produce safety document label'),
+    'help' => t('The label for the produce safety document.'),
     'field' => array(
       'handler' => 'views_handler_field',
       'click sortable' => TRUE,

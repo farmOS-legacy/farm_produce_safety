@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * farm_food_safety.features.field_base.inc
+ * farm_produce_safety.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function farm_food_safety_field_default_field_bases() {
+function farm_produce_safety_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_farm_action'.
