@@ -26,6 +26,7 @@ Current maintainers:
  * Michael Stenta (m.stenta) - https://drupal.org/user/581414
 
 This project has been sponsored by:
+ * [Vermont Agency of Agriculture Food & Markets](http://agriculture.vermont.gov)
+ * [Vermont Housing & Conservation Board](http://www.vhcb.org)
  * [UVM Extension](https://www.uvm.edu/extension)
  * [Farmier](http://farmier.com)
- 
