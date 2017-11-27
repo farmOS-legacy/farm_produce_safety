@@ -58,6 +58,7 @@ function farm_produce_safety_dashboard() {
       'title' => t('Agricultural Water'),
       'links' => array(
         l('Add log: Water test', 'log/add/farm_water_test', array('query' => array('category' => array('Produce Safety')))),
+        l('Add log: Water observation', 'log/add/farm_observation', array('query' => array('name' => 'Water observation', 'category' => array('Produce Safety', 'Water')))),
         l('Add log: Corrective action', 'log/add/farm_activity', array('query' => array('name' => 'Corrective action', 'category' => array('Produce Safety', 'Water')))),
       ),
     ),
