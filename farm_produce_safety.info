@@ -21,6 +21,7 @@ dependencies[] = farm_soil_test
 dependencies[] = farm_water_test
 dependencies[] = features
 dependencies[] = field_group
+dependencies[] = field_group_easy_responsive_tabs
 dependencies[] = file
 dependencies[] = list
 dependencies[] = log
