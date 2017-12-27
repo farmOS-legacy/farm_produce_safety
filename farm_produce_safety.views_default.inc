@@ -331,6 +331,7 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'log';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Log name';
   $handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name_1']['alter']['path'] = 'log/[id]';
   /* Field: Log: Areas */
@@ -399,7 +400,7 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Log name';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   /* Filter criterion: User: Name */
@@ -525,12 +526,11 @@ function farm_produce_safety_views_default_views() {
     t('Log ID'),
     t('.'),
     t('Date'),
-    t('Name'),
+    t('Log name'),
     t('Location'),
     t('Notes'),
     t('Categories'),
     t('Trainer'),
-    t('Search'),
     t('Start date'),
     t('End date'),
     t('Page'),
@@ -764,6 +764,7 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
   $handler->display->display_options['fields']['name_1']['table'] = 'log';
   $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Log name';
   $handler->display->display_options['fields']['name_1']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['name_1']['alter']['path'] = 'log/[id]';
   /* Field: Log: Worker */
@@ -867,7 +868,7 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['filters']['name']['group'] = 1;
   $handler->display->display_options['filters']['name']['exposed'] = TRUE;
   $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
-  $handler->display->display_options['filters']['name']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Log name';
   $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
   $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
   /* Filter criterion: User: Name */
@@ -993,7 +994,7 @@ function farm_produce_safety_views_default_views() {
     t('Log ID'),
     t('.'),
     t('Date'),
-    t('Name'),
+    t('Log name'),
     t('Worker'),
     t('Injury/illness sustained'),
     t('Action taken'),
@@ -1004,7 +1005,6 @@ function farm_produce_safety_views_default_views() {
     t('Reporter'),
     t('All'),
     t('Worker health records in %1'),
-    t('Search'),
     t('Start date'),
     t('End date'),
     t('Page'),
