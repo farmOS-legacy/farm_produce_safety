@@ -377,6 +377,12 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['sorts']['id']['table'] = 'log';
   $handler->display->display_options['sorts']['id']['field'] = 'id';
   $handler->display->display_options['sorts']['id']['order'] = 'DESC';
+  /* Sort criterion: Log: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'log';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
+  $handler->display->display_options['sorts']['name_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['name_1']['expose']['label'] = 'Log name';
   /* Sort criterion: User: Name */
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'users';
@@ -830,6 +836,12 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['sorts']['id']['table'] = 'log';
   $handler->display->display_options['sorts']['id']['field'] = 'id';
   $handler->display->display_options['sorts']['id']['order'] = 'DESC';
+  /* Sort criterion: Log: Name */
+  $handler->display->display_options['sorts']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['sorts']['name_1']['table'] = 'log';
+  $handler->display->display_options['sorts']['name_1']['field'] = 'name';
+  $handler->display->display_options['sorts']['name_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['name_1']['expose']['label'] = 'Log name';
   /* Sort criterion: User: Name */
   $handler->display->display_options['sorts']['name']['id'] = 'name';
   $handler->display->display_options['sorts']['name']['table'] = 'users';
