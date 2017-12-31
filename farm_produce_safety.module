@@ -189,6 +189,6 @@ function farm_produce_safety_feeds_tamper_default_alter(&$feeds_tampers) {
   $feeds_tampers[$feeds_tamper->id] = $feeds_tamper;
 
   // Convert "Returned to work?" to boolean in worker health logs.
-  $feeds_tamper = farm_import_feeds_tamper_plugin('log', 'farm_worker_health', 'Returned to work', 'convert_boolean');
+  $feeds_tamper = farm_import_feeds_tamper_plugin('log', 'farm_worker_health', 'Returned to work', 'boolean_default_false');
   $feeds_tampers[$feeds_tamper->id] = $feeds_tamper;
 }
