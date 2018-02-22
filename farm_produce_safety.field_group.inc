@@ -13,32 +13,6 @@ function farm_produce_safety_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
-  $field_group->identifier = 'group_farm_areas|log|farm_training|form';
-  $field_group->group_name = 'group_farm_areas';
-  $field_group->entity_type = 'log';
-  $field_group->bundle = 'farm_training';
-  $field_group->mode = 'form';
-  $field_group->parent_name = 'group_farm_tabs';
-  $field_group->data = array(
-    'label' => 'Location',
-    'weight' => '2',
-    'children' => array(
-      0 => 'field_farm_area',
-    ),
-    'format_type' => 'field_group_easy_responsive_tabs_nav_item',
-    'format_settings' => array(
-      'formatter' => '',
-      'instance_settings' => array(
-        'classes' => '',
-        'required_fields' => 1,
-      ),
-    ),
-  );
-  $field_groups['group_farm_areas|log|farm_training|form'] = $field_group;
-
-  $field_group = new stdClass();
-  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
-  $field_group->api_version = 1;
   $field_group->identifier = 'group_farm_category|log|farm_training|form';
   $field_group->group_name = 'group_farm_category';
   $field_group->entity_type = 'log';
@@ -105,7 +79,7 @@ function farm_produce_safety_field_group_info() {
   $field_group->parent_name = 'group_farm_tabs';
   $field_group->data = array(
     'label' => 'Files',
-    'weight' => '3',
+    'weight' => '4',
     'children' => array(
       0 => 'field_farm_files',
       1 => 'field_farm_images',
@@ -220,6 +194,32 @@ function farm_produce_safety_field_group_info() {
   $field_group = new stdClass();
   $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
   $field_group->api_version = 1;
+  $field_group->identifier = 'group_farm_location|log|farm_training|form';
+  $field_group->group_name = 'group_farm_location';
+  $field_group->entity_type = 'log';
+  $field_group->bundle = 'farm_training';
+  $field_group->mode = 'form';
+  $field_group->parent_name = 'group_farm_tabs';
+  $field_group->data = array(
+    'label' => 'Location',
+    'weight' => '2',
+    'children' => array(
+      0 => 'field_farm_area',
+    ),
+    'format_type' => 'field_group_easy_responsive_tabs_nav_item',
+    'format_settings' => array(
+      'formatter' => '',
+      'instance_settings' => array(
+        'classes' => 'group-farm-location field-group-field_group_easy_responsive_tabs_nav_item',
+        'required_fields' => 1,
+      ),
+    ),
+  );
+  $field_groups['group_farm_location|log|farm_training|form'] = $field_group;
+
+  $field_group = new stdClass();
+  $field_group->disabled = FALSE; /* Edit this to true to make a default field_group disabled initially */
+  $field_group->api_version = 1;
   $field_group->identifier = 'group_farm_tabs|log|farm_training|form';
   $field_group->group_name = 'group_farm_tabs';
   $field_group->entity_type = 'log';
@@ -233,6 +233,7 @@ function farm_produce_safety_field_group_info() {
       0 => 'group_farm_general',
       1 => 'group_farm_files',
       2 => 'group_farm_areas',
+      3 => 'group_farm_location',
     ),
     'format_type' => 'field_group_easy_responsive_tabs_nav',
     'format_settings' => array(
