@@ -21,7 +21,7 @@ function farm_produce_safety_field_group_info() {
   $field_group->parent_name = 'group_farm_general';
   $field_group->data = array(
     'label' => 'Category',
-    'weight' => '8',
+    'weight' => '2',
     'children' => array(
       0 => 'field_farm_log_category',
     ),
@@ -50,7 +50,7 @@ function farm_produce_safety_field_group_info() {
   $field_group->parent_name = 'group_farm_general';
   $field_group->data = array(
     'label' => 'Category',
-    'weight' => '9',
+    'weight' => '3',
     'children' => array(
       0 => 'field_farm_log_category',
     ),
@@ -142,8 +142,9 @@ function farm_produce_safety_field_group_info() {
       2 => 'field_farm_training_topics',
       3 => 'field_farm_log_owner',
       4 => 'field_farm_people',
-      5 => 'timestamp',
-      6 => 'group_farm_category',
+      5 => 'field_farm_flags',
+      6 => 'timestamp',
+      7 => 'group_farm_category',
     ),
     'format_type' => 'field_group_easy_responsive_tabs_nav_item',
     'format_settings' => array(
@@ -176,8 +177,9 @@ function farm_produce_safety_field_group_info() {
       3 => 'field_farm_health_summary',
       4 => 'field_farm_worker_returned',
       5 => 'field_farm_action',
-      6 => 'timestamp',
-      7 => 'group_farm_category',
+      6 => 'field_farm_flags',
+      7 => 'timestamp',
+      8 => 'group_farm_category',
     ),
     'format_type' => 'field_group_easy_responsive_tabs_nav_item',
     'format_settings' => array(
@@ -232,8 +234,7 @@ function farm_produce_safety_field_group_info() {
     'children' => array(
       0 => 'group_farm_general',
       1 => 'group_farm_files',
-      2 => 'group_farm_areas',
-      3 => 'group_farm_location',
+      2 => 'group_farm_location',
     ),
     'format_type' => 'field_group_easy_responsive_tabs_nav',
     'format_settings' => array(

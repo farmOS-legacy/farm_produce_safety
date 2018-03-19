@@ -52,7 +52,7 @@ function farm_produce_safety_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 8,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'log',
@@ -77,6 +77,37 @@ function farm_produce_safety_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'log-farm_training-field_farm_flags'.
+  $field_instances['log-farm_training-field_farm_flags'] = array(
+    'bundle' => 'farm_training',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Add flags to this log to enable better sorting and filtering of records.',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'log',
+    'field_name' => 'field_farm_flags',
+    'label' => 'Flags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 1,
+    ),
+  );
+
   // Exported field_instance: 'log-farm_training-field_farm_images'.
   $field_instances['log-farm_training-field_farm_images'] = array(
     'bundle' => 'farm_training',
@@ -97,7 +128,7 @@ function farm_produce_safety_field_default_field_instances() {
           'colorbox_node_style_first' => 'large',
         ),
         'type' => 'colorbox',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'log',
@@ -139,7 +170,7 @@ function farm_produce_safety_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'log',
@@ -188,7 +219,7 @@ function farm_produce_safety_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => -2,
     ),
   );
 
@@ -222,7 +253,7 @@ function farm_produce_safety_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 7,
+      'weight' => 0,
     ),
   );
 
@@ -256,7 +287,7 @@ function farm_produce_safety_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => -1,
     ),
   );
 
@@ -290,7 +321,7 @@ function farm_produce_safety_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 4,
+      'weight' => -3,
     ),
   );
 
@@ -324,7 +355,7 @@ function farm_produce_safety_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 3,
+      'weight' => -4,
     ),
   );
 
@@ -358,7 +389,7 @@ function farm_produce_safety_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 5,
+      'weight' => -2,
     ),
   );
 
@@ -373,7 +404,7 @@ function farm_produce_safety_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_table',
-        'weight' => 8,
+        'weight' => 9,
       ),
     ),
     'entity_type' => 'log',
@@ -395,6 +426,37 @@ function farm_produce_safety_field_default_field_instances() {
       ),
       'type' => 'file_mfw',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'log-farm_worker_health-field_farm_flags'.
+  $field_instances['log-farm_worker_health-field_farm_flags'] = array(
+    'bundle' => 'farm_worker_health',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Add flags to this log to enable better sorting and filtering of records.',
+    'display' => array(
+      'default' => array(
+        'label' => 'inline',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'log',
+    'field_name' => 'field_farm_flags',
+    'label' => 'Flags',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 2,
     ),
   );
 
@@ -429,7 +491,7 @@ function farm_produce_safety_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 4,
+      'weight' => -3,
     ),
   );
 
@@ -453,7 +515,7 @@ function farm_produce_safety_field_default_field_instances() {
           'colorbox_node_style_first' => 'large',
         ),
         'type' => 'colorbox',
-        'weight' => 7,
+        'weight' => 8,
       ),
     ),
     'entity_type' => 'log',
@@ -495,7 +557,7 @@ function farm_produce_safety_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_plain',
-        'weight' => 6,
+        'weight' => 7,
       ),
     ),
     'entity_type' => 'log',
@@ -544,7 +606,7 @@ function farm_produce_safety_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 7,
+      'weight' => 0,
     ),
   );
 
@@ -578,7 +640,7 @@ function farm_produce_safety_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 8,
+      'weight' => 1,
     ),
   );
 
@@ -612,7 +674,7 @@ function farm_produce_safety_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => -4,
     ),
   );
 
@@ -644,19 +706,21 @@ function farm_produce_safety_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 6,
+      'weight' => -1,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
   t('Action taken');
+  t('Add flags to this log to enable better sorting and filtering of records.');
   t('Areas');
   t('Attendees');
   t('Briefly describe any actions that were taken (ice applied, bandaged, sent to hospital, etc). Use the Notes field for a more detailed report.');
   t('Briefly summarize the injury or illness sustained by the worker(s). Use the Notes field for a more detailed report.');
   t('Did the employee(s) return to work?');
   t('Files');
+  t('Flags');
   t('Include training materials and provide an outline of the training topics discussed. Also reference any relevant SOPs or sections of your farm produce safety plan that apply.');
   t('Injury/illness sustained');
   t('Log category');
