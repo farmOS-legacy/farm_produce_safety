@@ -21,7 +21,7 @@ function farm_produce_safety_field_group_info() {
   $field_group->parent_name = 'group_farm_general';
   $field_group->data = array(
     'label' => 'Category',
-    'weight' => '2',
+    'weight' => '7',
     'children' => array(
       0 => 'field_farm_log_category',
     ),
@@ -50,7 +50,7 @@ function farm_produce_safety_field_group_info() {
   $field_group->parent_name = 'group_farm_general';
   $field_group->data = array(
     'label' => 'Category',
-    'weight' => '3',
+    'weight' => '8',
     'children' => array(
       0 => 'field_farm_log_category',
     ),
