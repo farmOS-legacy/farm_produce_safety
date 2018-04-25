@@ -611,7 +611,6 @@ function farm_produce_safety_views_default_views() {
     'field_farm_health_summary' => 'field_farm_health_summary',
     'field_farm_action' => 'field_farm_action',
     'field_farm_worker_returned' => 'field_farm_worker_returned',
-    'field_farm_area' => 'field_farm_area',
     'field_farm_notes' => 'field_farm_notes',
     'field_farm_flags' => 'field_farm_flags',
     'field_farm_log_category' => 'field_farm_log_category',
@@ -674,11 +673,6 @@ function farm_produce_safety_views_default_views() {
     'field_farm_worker_returned' => array(
       'sortable' => 0,
       'default_sort_order' => 'asc',
-      'align' => '',
-      'separator' => '',
-      'empty_column' => 0,
-    ),
-    'field_farm_area' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -838,11 +832,6 @@ function farm_produce_safety_views_default_views() {
   $handler->display->display_options['fields']['field_farm_worker_returned']['id'] = 'field_farm_worker_returned';
   $handler->display->display_options['fields']['field_farm_worker_returned']['table'] = 'field_data_field_farm_worker_returned';
   $handler->display->display_options['fields']['field_farm_worker_returned']['field'] = 'field_farm_worker_returned';
-  /* Field: Log: Areas */
-  $handler->display->display_options['fields']['field_farm_area']['id'] = 'field_farm_area';
-  $handler->display->display_options['fields']['field_farm_area']['table'] = 'field_data_field_farm_area';
-  $handler->display->display_options['fields']['field_farm_area']['field'] = 'field_farm_area';
-  $handler->display->display_options['fields']['field_farm_area']['delta_offset'] = '0';
   /* Field: Log: Notes */
   $handler->display->display_options['fields']['field_farm_notes']['id'] = 'field_farm_notes';
   $handler->display->display_options['fields']['field_farm_notes']['table'] = 'field_data_field_farm_notes';
@@ -1065,7 +1054,6 @@ function farm_produce_safety_views_default_views() {
     t('Injury/illness sustained'),
     t('Action taken'),
     t('Returned to work?'),
-    t('Areas'),
     t('Notes'),
     t('Flags'),
     t('Categories'),
