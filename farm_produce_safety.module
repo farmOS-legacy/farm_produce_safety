@@ -25,20 +25,30 @@ function farm_produce_safety_menu() {
 }
 
 /**
- * Implements hook_farm_ui_entities().
+ * Implements hook_farm_record_types().
  */
-function farm_produce_safety_farm_ui_entities() {
+function farm_produce_safety_farm_record_types() {
   return array(
     'log' => array(
       'farm_training' => array(
         'label' => t('Training'),
         'label_plural' => t('Trainings'),
+        'log_settings' => array(
+          'name_pattern' => 'Training: [log:field-farm-training-topics]',
+          'name_edit' => FALSE,
+          'done' => TRUE,
+        ),
         'view' => 'farm_produce_safety_training',
         'farm_asset' => 'none',
       ),
       'farm_worker_health' => array(
         'label' => t('Worker health log'),
         'label_plural' => t('Worker health logs'),
+        'log_settings' => array(
+          'name_pattern' => 'Worker health: [log:field-farm-people] [log:field-farm-health-summary]',
+          'name_edit' => FALSE,
+          'done' => TRUE,
+        ),
         'view' => 'farm_produce_safety_worker_health',
         'farm_asset' => 'none',
         'areas' => TRUE,

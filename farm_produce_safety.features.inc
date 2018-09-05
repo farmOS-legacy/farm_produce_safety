@@ -8,40 +8,19 @@
  * Implements hook_ctools_plugin_api().
  */
 function farm_produce_safety_ctools_plugin_api($module = NULL, $api = NULL) {
-  if ($module == "field_group" && $api == "field_group") {
-    return array("version" => "1");
-  }
+  return farm_record_api('ctools', $module, $api);
 }
 
 /**
  * Implements hook_views_api().
  */
 function farm_produce_safety_views_api($module = NULL, $api = NULL) {
-  return array("api" => "3.0");
+  return farm_record_api('views', $module, $api);
 }
 
 /**
  * Implements hook_default_log_type().
  */
 function farm_produce_safety_default_log_type() {
-  $items = array();
-  $items['farm_training'] = entity_import('log_type', '{
-    "type" : "farm_training",
-    "label" : "Training",
-    "weight" : 0,
-    "name_pattern" : "Training: [log:field-farm-training-topics]",
-    "name_edit" : "0",
-    "done" : "1",
-    "rdf_mapping" : []
-  }');
-  $items['farm_worker_health'] = entity_import('log_type', '{
-    "type" : "farm_worker_health",
-    "label" : "Worker Health",
-    "weight" : 0,
-    "name_pattern" : "Worker health: [log:field-farm-people] [log:field-farm-health-summary]",
-    "name_edit" : "0",
-    "done" : "1",
-    "rdf_mapping" : []
-  }');
-  return $items;
+  return farm_record_entity_type_definitions('farm_produce_safety', 'log');
 }
