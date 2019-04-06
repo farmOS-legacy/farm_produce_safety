@@ -29,7 +29,7 @@ function farm_produce_safety_default_log_type() {
     "type" : "farm_training",
     "label" : "Training",
     "weight" : 0,
-    "name_pattern" : "Training: [log:field-farm-training-topics]",
+    "name_pattern" : "Training [log:timestamp:short] [log:field-farm-training-topics]",
     "name_edit" : "0",
     "done" : "1",
     "rdf_mapping" : []
@@ -38,7 +38,7 @@ function farm_produce_safety_default_log_type() {
     "type" : "farm_worker_health",
     "label" : "Worker Health",
     "weight" : 0,
-    "name_pattern" : "Worker health: [log:field-farm-people] [log:field-farm-health-summary]",
+    "name_pattern" : "Worker health [log:timestamp:short] [log:field-farm-people] [log:field-farm-health-summary]",
     "name_edit" : "0",
     "done" : "1",
     "rdf_mapping" : []
