@@ -1047,7 +1047,7 @@ function farm_produce_safety_views_default_views() {
     t('.'),
     t('Date'),
     t('Log name'),
-    t('Worker'),
+    t('Attendees'),
     t('Injury/illness sustained'),
     t('Action taken'),
     t('Returned to work?'),
