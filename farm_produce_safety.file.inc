@@ -24,6 +24,8 @@ function farm_produce_safety_document_types() {
  */
 function farm_produce_safety_document_upload_form($form, &$form_state) {
   $extensions = farm_fields_file_types();
+  $scheme = variable_get('file_default_scheme', 'public');
+  $upload_location = $scheme . '://produce_safety';
   $form['file'] = array(
     '#type' => 'managed_file',
     '#title' => t('File'),
@@ -33,7 +35,7 @@ function farm_produce_safety_document_upload_form($form, &$form_state) {
     '#upload_validators' => array(
       'file_validate_extensions' => array($extensions),
     ),
-    '#upload_location' => 'public://produce_safety',
+    '#upload_location' => $upload_location,
   );
   $form['type'] = array(
     '#type' => 'select',
